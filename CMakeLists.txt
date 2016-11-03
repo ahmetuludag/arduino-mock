@@ -32,6 +32,8 @@ set_target_properties( arduino_mock
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/dist/bin"
 )
 
+target_compile_features(arduino_mock PRIVATE cxx_delegating_constructors)
+
 add_dependencies(arduino_mock gtest gmock)
 
 option(test "Build all tests." OFF)
